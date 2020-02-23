@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1100.0" stylesheets="@../css/fxmlcompilateur.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controles.compilateurController">
+   <StackPane fx:id="root" prefHeight="150.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <BorderPane fx:id="bp" styleClass="background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
+      <top>
+         <VBox prefHeight="50.0" prefWidth="2054.0" BorderPane.alignment="CENTER">
+            <children>
+               <MenuBar prefHeight="16.0" prefWidth="2117.0">
+                  <menus>
+                     <Menu text="File">
+                        <items>
+                           <MenuItem onAction="#newfile" text="New">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/new.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem onAction="#openfile" text="Open...">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/open.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem onAction="#save" text="Save">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/save.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem text="Save As...">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/saveas.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                           <SeparatorMenuItem />
+                           <SeparatorMenuItem />
+                           <MenuItem text="Exit">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/exit.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                        </items>
+                        <graphic>
+                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/ff.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Menu>
+                     <Menu text="Edit">
+                        <items>
+                           <MenuItem text="Undo ">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/undo.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                           <SeparatorMenuItem />
+                           <MenuItem onAction="#cut" text="Cut">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/cut.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem onAction="#copy" text="Copy">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/copy.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem onAction="#paste" text="Paste">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/paste.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem text="Delete">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/exit.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                           <SeparatorMenuItem />
+                           <MenuItem text="Select All">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/selecta.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                        </items>
+                        <graphic>
+                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/edit.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Menu>
+                     <Menu text="Compile">
+                        <items>
+                           <MenuItem onAction="#run" text="Complilateur Time alg lotos">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/compli.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem onAction="#DFS" text="Dijkstra's SPF">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/graph.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                        </items>
+                        <graphic>
+                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/comp.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Menu>
+                     <Menu text="View">
+                        <items>
+                           <MenuItem text="Status Bar">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/view.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                           <MenuItem onAction="#goToDeveloppez" text="historical">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/hist.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                        </items>
+                        <graphic>
+                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/view.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Menu>
+                     <Menu text="Help">
+                        <items>
+                           <MenuItem onAction="#helep" text="About ">
+                              <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../images/about.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </MenuItem>
+                        </items>
+                        <graphic>
+                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/help.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Menu>
+                  </menus>
+               </MenuBar>
+               <ToolBar maxHeight="-Infinity" prefHeight="35.0" prefWidth="1100.0" VBox.vgrow="ALWAYS">
+                 <items>
+                     <Button ellipsisString="New file" mnemonicParsing="false" onAction="#newfile" styleClass="segmented-button-bar">
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/new.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <tooltip>
+                           <Tooltip text="New File" />
+                        </tooltip>
+                     </Button>
+                     <Button mnemonicParsing="false" onAction="#openfile" styleClass="segmented-button-bar">
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/open.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <tooltip>
+                           <Tooltip text="Open file" />
+                        </tooltip>
+                     </Button>
+                     <Button mnemonicParsing="false" onAction="#save" styleClass="segmented-button-bar">
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/save.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <tooltip>
+                           <Tooltip text="Save file" />
+                        </tooltip>
+                     </Button>
+                     <Button mnemonicParsing="false" styleClass="segmented-button-bar">
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/undo.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <tooltip>
+                           <Tooltip text="Undo" />
+                        </tooltip>
+                     </Button>
+                     <Button fx:id="miCut" mnemonicParsing="false" onAction="#cut" styleClass="segmented-button-bar">
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/cut.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <tooltip>
+                           <Tooltip text="Cut" />
+                        </tooltip>
+                     </Button>
+                     <Button fx:id="miCopy" mnemonicParsing="false" onAction="#copy" styleClass="segmented-button-bar">
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/copy.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <tooltip>
+                           <Tooltip text="Copy" />
+                        </tooltip>
+                     </Button>
+                     <Button fx:id="miPaste" mnemonicParsing="false" onAction="#paste" styleClass="segmented-button-bar">
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/paste.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <tooltip>
+                           <Tooltip text="Paste" />
+                        </tooltip>
+                     </Button>
+                     <Button mnemonicParsing="false" styleClass="segmented-button-bar">
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/exit.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <tooltip>
+                           <Tooltip text="Delete" />
+                        </tooltip>
+                     </Button>
+                     <Button mnemonicParsing="false" onAction="#run" styleClass="segmented-button-bar">
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/comp.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <tooltip>
+                           <Tooltip text="Run" />
+                        </tooltip>
+                     </Button>
+                     <Button mnemonicParsing="false" onAction="#DFS" styleClass="segmented-button-bar">
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/graph.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <tooltip>
+                           <Tooltip text="Dijkstra's SPF algorithm" />
+                        </tooltip>
+                     </Button>
+                     <Button mnemonicParsing="false" onAction="#goToDeveloppez" styleClass="segmented-button-bar">
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/hist.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <tooltip>
+                           <Tooltip text="Historical" />
+                        </tooltip>
+                     </Button>
+                     <Button mnemonicParsing="false" onAction="#helep" styleClass="segmented-button-bar">
+                        <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/help.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <tooltip>
+                           <Tooltip text="About" />
+                        </tooltip>
+                     </Button>
+                 </items>
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </ToolBar>
+            </children>
+         </VBox>
+      </top>
+      <center>
+         <HBox fx:id="hb" prefHeight="397.0" prefWidth="1100.0" styleClass="tab" BorderPane.alignment="CENTER">
+            <children>
+               <TabPane fx:id="tabpane" prefHeight="405.0" prefWidth="1099.0" rotateGraphic="true" HBox.hgrow="ALWAYS">
+                 <tabs>
+                   <Tab text="New File">
+                        <content>
+                           <TextArea prefHeight="200.0" prefWidth="200.0" styleClass="text-area" />
+                        </content></Tab>
+                 </tabs>
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </TabPane>
+            </children>
+            <BorderPane.margin>
+               <Insets bottom="1.0" right="1.0" top="0.5" />
+            </BorderPane.margin>
+            <padding>
+               <Insets right="1.0" />
+            </padding></HBox>
+      </center>
+      <bottom>
+         <HBox prefHeight="200.0" prefWidth="1100.0">
+            <BorderPane.margin>
+               <Insets />
+            </BorderPane.margin>
+            <children>
+               <TabPane prefHeight="200.0" prefWidth="1105.0" styleClass="jfx-tab-pane" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+                 <tabs>
+                   <Tab text="Console">
+                        <graphic>
+                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/const.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <content>
+                           <TextArea fx:id="console" prefHeight="200.0" prefWidth="200.0" />
+                        </content>
+                   </Tab>
+                 </tabs>
+                  <HBox.margin>
+                     <Insets left="1.0" right="1.0" />
+                  </HBox.margin>
+               </TabPane>
+            </children>
+         </HBox>
+      </bottom>
+</BorderPane>
+</AnchorPane>

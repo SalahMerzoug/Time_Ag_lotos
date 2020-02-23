@@ -1,0 +1,1 @@
+e:=(meet(maison){4};EXIT{4})>>((meetde(alit){5};move(ecol)[2,6];EXIT{3}[]ib{5};samir[1,5];EXIT{5}))
